@@ -15,7 +15,3 @@
   main []
   (renderer/start!)
   )
-
-(comment
-  (js/console.log "Hello World")
-)
