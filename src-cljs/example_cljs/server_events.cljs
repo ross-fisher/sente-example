@@ -81,7 +81,7 @@
 
 
 (defn test-event-send []
-  (chsk-send! [:example/test-event-send "sneed"]))
+  (chsk-send! [:example/test-event-send "dh"]))
 
 
 
