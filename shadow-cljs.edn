@@ -1,0 +1,15 @@
+{:lein true
+
+ :nrepl {:port 8021
+         :middleware {}}
+
+ :builds {:main {:target :browser
+                 :output-dir "resources/public/js"
+                 :asset-path "js"
+                 :modules {:main
+                           {:entries [example-cljs.core]}}
+                 ; https://shadow-cljs.github.io/docs/UsersGuide.html#compile-stages
+                 :build-hooks
+                 [(example.server/shadow-configure)]
+                 }}}
+

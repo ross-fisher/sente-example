@@ -1,0 +1,30 @@
+{
+  "name": "sente-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ross-fisher/sente-example.git"
+  },
+  "keywords": [
+    "sente",
+    "ring",
+    "clojure",
+    "clojurescript",
+    "shadow-cljs"
+  ],
+  "author": "Ross Fisher",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ross-fisher/sente-example/issues"
+  },
+  "homepage": "https://github.com/ross-fisher/sente-example#readme",
+  "dependencies": {
+    "react": "16.9.0",
+    "react-dom": "16.9.0"
+  }
+}
