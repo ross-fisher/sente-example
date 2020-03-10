@@ -1,7 +1,6 @@
 (ns example.server
   (:require
       [ring.middleware.defaults :refer [wrap-defaults site-defaults]]
-      [ring.middleware.json :as ring-json]
       [ring.middleware.resource :refer [wrap-resource]]
       [hiccup.core :as hiccup]
       [org.httpkit.server :as http-kit]
@@ -133,8 +132,10 @@
 ;; Using http kit to start a the server
 (defonce web-server (atom nil))
 
+
 (defn stop-web-server! []
   (when-let [stop-fn @web-server] (stop-fn)))
+
 
 (defn start-web-server! [& [port]]
   (stop-web-server!)
@@ -157,11 +158,12 @@
   (stop-router!)
   (stop-web-server!))
 
+
 (defn start! []
   (start-router!)
   (start-web-server! 8888)
-  (broadcast!)
-  )
+  (broadcast!))
+
 
 (defn -main []
   (start!)

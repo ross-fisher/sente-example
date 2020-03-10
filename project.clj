@@ -8,17 +8,9 @@
                  [thheller/shadow-cljs "RELEASE"]
                  [com.taoensso/sente "1.15.0"]
                  [http-kit "2.3.0"]
-                 [ring/ring-defaults "0.3.2"]
-                 [ring/ring-json "0.5.0"]
-                 [clojure.joda-time "0.7.0"]
-                 [clj-time "0.15.2"]
-                 [org.clojure/tools.trace "0.7.10"]
-                 ]
+                 [ring/ring-defaults "0.3.2"]]
   :main example.server
   :source-paths ["src" "src-cljs"]
   :target-path "target/%s"
   :profiles {:dev {:source-paths ["src-dev"]}
              :uberjar {:aot :all}})
-                 ; [com.cognitect/transit-clj "1.0.324"]
-                 ; [com.cognitect/transit-cljs "0.8.256"]
-
