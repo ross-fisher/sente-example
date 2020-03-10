@@ -94,7 +94,6 @@
       (?reply-fn {:echo event}))))
 
 
-
 ; An example sente event which the front end can invoke to
 ; send this message back to it
 (defn example-send-event
@@ -120,9 +119,11 @@
     (recur)))
 
 
-; Hav to start an event router to handle the sente events
+; Start an event router to handle the sente events
 (defonce router (atom nil))
+
 (defn stop-router! [] (when-let [stop-fn @router] (stop-fn)))
+
 (defn start-router! []
   (stop-router!)
   (reset! router
@@ -132,10 +133,8 @@
 ;; Using http kit to start a the server
 (defonce web-server (atom nil))
 
-
 (defn stop-web-server! []
   (when-let [stop-fn @web-server] (stop-fn)))
-
 
 (defn start-web-server! [& [port]]
   (stop-web-server!)
@@ -158,20 +157,18 @@
   (stop-router!)
   (stop-web-server!))
 
-
 (defn start! []
   (start-router!)
   (start-web-server! 8888)
   (broadcast!))
-
 
 (defn -main []
   (start!)
   )
 
 
-; Configure is called once in the shadow-cljs process. Use this to
-; Start the server
+; Configure is called once in the shadow-cljs process.
+; Starts the server.
 (defn shadow-configure
   {:shadow.build/stage :configure}
   [build-state & args]
