@@ -96,7 +96,3 @@
 
 (defn start! [] (start-router!))
 (defonce start-once (start!))
-
-(comment
-  (printf "okay %s" 2)
-  )
